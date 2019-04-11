@@ -1,0 +1,31 @@
+<head>
+	{% load static %}
+	<link href="{% static 'tinymce/css/prism.css' %}" rel="stylesheet">
+	<!-- Compiled and minified CSS -->
+    <link href="{% static 'main/css/color2.css' %}" rel="stylesheet">
+		<link href="{% static 'main/css/index.css' %}" rel="stylesheet">
+		<link href="{% static 'main/css/footer.css' %}" rel="stylesheet">
+
+
+		<link rel="shortcut icon" type="image/png" href="../assets/palette.png"/>
+    
+</head>
+
+<body>
+
+    {% include "main/includes/navbar.html" %}
+    {% include "main/includes/messages.html" %}
+		{% include "main/includes/footer.html" %}
+
+  <div class="container">
+    <br>
+    {% block content %}
+    {% endblock %}
+  </div>
+
+</body>
+
+<script src="{% static 'tinymce/js/prism.js' %}"></script>
+
+<!-- Initialize materialize script -->
+<<script>	M.AutoInit(); </script>
