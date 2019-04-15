@@ -10,7 +10,23 @@ from .forms import NewUserForm
 def homepage(request):
     return render(request=request,
                   template_name='main/categories.html',
-                  context={"categories": MusicCategory.objects.all})
+                  context={"categories": ''})
+
+
+def contact(request):
+    return render(request=request,
+                  template_name='main/contact.html',
+                  context={"": ''})
+def about(request):
+    return render(request=request,
+                  template_name='main/about.html',
+                  context={"": ''})
+
+def learning(request):
+    return render(request=request,
+                  template_name='main/learning.html',
+                  context={"": ''})
+
 
 def register(request):
 	if request.method == "POST":
