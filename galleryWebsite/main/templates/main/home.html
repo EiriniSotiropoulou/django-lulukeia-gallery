@@ -1,31 +1,26 @@
-<head>
+<!-- <head>
 	{% load static %}
 	<title>Lulukeia Gallery</title>
-	<!-- Compiled and minified CSS -->
+
     <link href="{% static 'main/css/color2.css' %}" rel="stylesheet">
 		<link href="{% static 'main/css/home.css' %}" rel="stylesheet">
 		<link href="{% static 'main/css/footer.css' %}" rel="stylesheet">
-		<!-- <link href="{% static 'main/css/home.css' %}" rel="stylesheet"> -->
-		<!--  Favicon loading... -->
+
+
 		<link rel="shortcut icon" type="image/png" href="{% static 'main/assets/palette.png' %}"/>
 </head>
-{% include "main/includes/header.html" %}
-{% include "main/includes/footer.html" %}
-{% include "main/includes/messages.html" %}
+
+
+{% include "./header.html" %}
+{% include "../main/includes/messages.html" %}
+
+
+
 {% block content %}
-<div class="main">
 
-	<div class="content">
-		<h1> sdsdsdsd </h1>
-		<h2> sdsdsdsd </h2>
-
-	</div>
-
-
-
-</div>
 {% endblock %}
 
+-->
 
 <!-- Initialize materialize script -->
 <script>	M.AutoInit(); </script>

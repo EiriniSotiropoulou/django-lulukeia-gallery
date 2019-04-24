@@ -11,7 +11,7 @@ from .models import Gallery
 def homepage(request):
     return render(request=request,
                   template_name='main/categories.html',
-                  context={"paintings": Gallery.objects.all()})
+                  context={"paintings": ''})
 
 
 def contact(request):
