@@ -4,13 +4,14 @@ from django.http import HttpResponse
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, logout, authenticate
 from django.contrib import messages
+from django.views.generic import ListView
 from .forms import NewUserForm
-
+from .models import Gallery
 
 def homepage(request):
     return render(request=request,
                   template_name='main/categories.html',
-                  context={"categories": ''})
+                  context={"paintings": Gallery.objects.all()})
 
 
 def contact(request):
@@ -25,6 +26,12 @@ def about(request):
 def learning(request):
     return render(request=request,
                   template_name='main/learning.html',
+                  context={"": ''})
+
+
+def news(request):
+    return render(request=request,
+                  template_name='main/news.html',
                   context={"": ''})
 
 

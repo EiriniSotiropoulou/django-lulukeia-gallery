@@ -3,6 +3,7 @@ from .models import *
 from tinymce.widgets import TinyMCE
 from django.db import models
 
+admin.site.register(Gallery)
 # # Register your models here.
 # class MusicAdmin(admin.ModelAdmin):
 # 	fieldsets = [
