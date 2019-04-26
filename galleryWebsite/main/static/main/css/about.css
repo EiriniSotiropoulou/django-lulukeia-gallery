@@ -4,10 +4,12 @@ h1{
 img {
   width: 100%;
   display: block;
+  max-width: 100%;
 }
 
 
 .grid {
+  background-color: inherit;
   margin: 0 0;
   /* padding: 0 0; */
   max-width: 980px;

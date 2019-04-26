@@ -28,6 +28,10 @@ def learning(request):
                   template_name='main/learning.html',
                   context={"": ''})
 
+def login(request):
+    return render(request=request,
+                  template_name='main/login.html',
+                  context={"": ''})
 
 def news(request):
     return render(request=request,
@@ -76,6 +80,7 @@ def login_request(request):
         else:
             messages.error(request, "Invalid username or password.")
     form = AuthenticationForm()
+
     return render(request = request,
                     template_name = "main/login.html",
                     context={"form":form})

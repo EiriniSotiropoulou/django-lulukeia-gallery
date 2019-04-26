@@ -20,6 +20,6 @@
 .wrapper{
   padding-top: 20vh;
   padding-bottom: 10vh;
-  background-color: #ead9fc;
+  background-color: var(----color_prim_4);
   padding-left: 5vh;
 }

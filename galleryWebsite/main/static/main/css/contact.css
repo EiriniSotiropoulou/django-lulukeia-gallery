@@ -5,19 +5,18 @@
 }
 
 
-
 form , .intro {
     margin-top: 2em;
     margin-left:1em;
 }
 
 .button {
-    background-color: #e68a00; /* orange */
+    background-color: var(--color_sec_22); /* anoixto mov */
     border: none;
     color: white;
     padding: 20px;
     text-align: center;
-    text-decoration: none;
+    /* text-decoration: none; */
     display: inline-block;
     font-size: 14px;
     margin: 4px 2px;
@@ -25,19 +24,35 @@ form , .intro {
     border-radius: 6px;
 }
 
+.contact input::placeholder {
+  color: var(--color_sec_22);
+  font-style: italic;
+  font-family: "Roboto Condensed";
+  margin-left:10px;
+  width:245px;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: var(--color_sec_22);
+}
 .message{
     border: none;
     display: inline-block;
     flex-direction: row;
-
     margin: 0 0 3px 0;
 
 }
 
 
 .date {
-    float: right;
+    /* float: right; */
     margin-right: 60em;
+}
+.date img{
+  align-self: center;
+  width: 20%;
+  max-width: 100%;
+  display: block;
 }
 hr{
     color:#808080;
