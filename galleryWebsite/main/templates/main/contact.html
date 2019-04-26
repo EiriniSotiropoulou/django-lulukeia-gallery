@@ -1,7 +1,56 @@
-{% extends "main/header.html" %}
+{% extends "main/home.html" %}
 
 {% block content %}
-  <div class="contact-row">
+
+  <div class="contact">
+      <h3>
+        Contact
+      </h3>
+      <hr>
+      <h1>
+        Reach to us
+      </h1>
+      <div class="intro">
+          <p style="font-style:italic">Fill in with latin characters, please...</p>
+        </div>
+      <form action="/form-handling" method="post">
+
+        <div class="naming">
+          <h3>Full Name</h3>
+          <label for="name">
+          <input type="text" id="name" name="user_first" placeholder="Name" style="width:245px;"required>
+          <input type="text" id="name" name="user_last" placeholder="Surname" style="margin-left:10px; width:245px;"required>
+          </label>
+        </div>
+        <div class="emailInfo">
+          <h3>Contact details</h3>
+          <label for="emailInfo'"></label>
+          <input type="text" name="telephone" id="telephone" placeholder="Telephone" style="width:245px;" required>
+          <input type="text" name="mail" id="mail" placeholder="Email address" style="margin-left:10px; width:245px;" required>
+        </div>
+
+        <div class="outro">
+          <hr>
+          <h2>Leave your Message for us...</h2>
+        </div>
+
+        <div class="message">
+            <h3>Events interest</h3>
+
+            <p> <input type="radio" name="way" id="way_1" value="Event for adults and groups" checked> <label for="way_1">Event for adults and groups</label> </p>
+            <p> <input type="radio" name="way" id="way_2" value="Event for children and schools"> <label for="way_2">Event for children and schools</label> </p>
+        </div>
+        <div class="date">
+            <h3>Date of the event to be scheduled</h3>
+            <label for="myDate"></label>
+
+            <input type="date" id="myDate" value="">
+            <img src="calendar.png" alt="calendar image" height="30" width="30" align="middle">
+
+        </div>
+            <hr>
+            <button class="button" onclick="showValues()" value="Υποβολή">Submit</button>
+      </form>
 
   </div>
 {% endblock %}

@@ -16,3 +16,10 @@
   filter: alpha(opacity=50); /* For IE8 and earlier */
   margin: 10px;
 }
+
+.wrapper{
+  padding-top: 20vh;
+  padding-bottom: 10vh;
+  background-color: #ead9fc;
+  padding-left: 5vh;
+}

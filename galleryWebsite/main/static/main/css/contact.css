@@ -1,0 +1,47 @@
+.contact {
+    font-size: 100%;
+    position: relative;
+    font-family: "Roboto Condensed";
+}
+
+
+
+form , .intro {
+    margin-top: 2em;
+    margin-left:1em;
+}
+
+.button {
+    background-color: #e68a00; /* orange */
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.message{
+    border: none;
+    display: inline-block;
+    flex-direction: row;
+
+    margin: 0 0 3px 0;
+
+}
+
+
+.date {
+    float: right;
+    margin-right: 60em;
+}
+hr{
+    color:#808080;
+}
+input[type="text"] {
+    font-family: "Roboto Condensed";
+}
