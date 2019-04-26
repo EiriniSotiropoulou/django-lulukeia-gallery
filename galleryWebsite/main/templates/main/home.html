@@ -1,26 +1,63 @@
-<!-- <head>
-	{% load static %}
-	<title>Lulukeia Gallery</title>
-
-    <link href="{% static 'main/css/color2.css' %}" rel="stylesheet">
-		<link href="{% static 'main/css/home.css' %}" rel="stylesheet">
-		<link href="{% static 'main/css/footer.css' %}" rel="stylesheet">
-
-
-		<link rel="shortcut icon" type="image/png" href="{% static 'main/assets/palette.png' %}"/>
-</head>
-
-
-{% include "./header.html" %}
-{% include "../main/includes/messages.html" %}
-
-
-
-{% block content %}
-
-{% endblock %}
-
+{% load static from staticfiles %}
+<!-- Starting django point
+1. Head
+	2. Style
+		3. Block contents for each page
 -->
 
-<!-- Initialize materialize script -->
-<script>	M.AutoInit(); </script>
+<!DOCTYPE html>
+<html>
+
+	<head>
+
+			<title>Lulukeia Gallery</title>
+			<!-- <script src="../js/jquery.js"></script> -->
+			<!-- Adding some CSS -->
+	    <link href="/static/main/css/color2.css" rel="stylesheet">
+			<link href="/static/main/css/index.css" rel="stylesheet">
+			<link href="/static/main/css/footer.css" rel="stylesheet">
+			<link href="/static/main/css/header.css" rel="stylesheet">
+			<!--  Favicon loading... -->
+			<link rel="shortcut icon" type="image/png" src="./../static/main/assets/logo2.png">
+
+	</head>
+
+	<style >
+		#menu{
+
+		grid-area: menu;
+		background-color: rgba(255,255,255,0.3) ;
+		-webkit-transition: none;
+		height: 100%;
+
+		}
+		#log{
+
+		grid-area: login;
+		/*align-self: end;*/
+		background-color: rgba(255,255,255,0.3) ;
+		-webkit-transition: none;
+		height: 100%;
+
+		}
+	</style>
+
+	<body>
+		<!--  Load the header. P.S. CSS are loaded with link reference in the beginning of that file! -->
+		{% block header %}
+			{% include "main/includes/header.html" %}
+		{% endblock %}
+
+		<div class="wrapper">
+			{% block content %}
+			{% endblock %}
+		</div>
+
+		<!--  Load the footer -->
+		{% block footer %}
+			{% include "main/includes/footer.html" %}
+		{% endblock %}
+
+	</body>
+
+</html>

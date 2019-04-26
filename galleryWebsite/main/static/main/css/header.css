@@ -1,0 +1,184 @@
+html, body {
+  font-size:16px;
+  width:100vw;
+  height: 100vh;
+  font-family: "Roboto Condensed";
+  overflow: auto;
+  color: var(--color_sec_22);
+  /*-ms-overflow-style: scrollbar;*/
+  -webkit-font-smoothing: antialiased;
+  margin: 0 0 0 0;
+}
+
+
+.grid-container{
+  width:100vw;
+  height: 100vh;
+  display :grid;
+  grid-template-rows: auto ;
+  grid-gap: 10px;
+  margin: 0 0 0 0;
+}
+
+
+.header{
+  width: 100vw;
+  height: 20vh;
+  display: grid;
+  grid-auto-rows: 100px;
+
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+/*  grid-gap: 10px;
+*/  grid-auto-rows: 100px;
+  grid-template-areas:
+  "logo . . . . . . login"
+  "logo menu . . . . . .";
+  /*align-items: start;*/
+
+
+  background: url("../assets/oil-painting-underwater-paintings-isabel-emrich-6.jpg");
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position:fixed;
+  top:0;
+  left:0;
+  right: 0;
+  z-index: 1;
+  padding: 0;
+  }
+
+.logo{
+
+  height: 100%;
+  width: 80px;
+  background: url('../assets/logo.png') no-repeat;
+  background-size:  100%;
+  z-index: 3;
+  /*border: 0.5px dashed blue;*/
+
+}
+
+#mona{
+  grid-area: mona;
+  object-fit: contain;
+}
+#starry{
+  grid-area: starry;
+    object-fit: contain;
+}
+#guernica{
+  grid-area: guernica;
+    object-fit: contain;
+}
+
+.content{
+  display: grid;
+  height: 60vh;
+  width: 100vw;
+  grid-template-columns: 1fr 3fr 3fr;
+  grid-template-areas:
+  'mona guernica guernica'
+  'mona  starry starry';
+}
+
+.dropbtn {
+  overflow: hidden;
+  /* padding: 16px; */
+  text-align: center;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-right: 245px;
+  text-align: center;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 80px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown:hover .dropdown-content{
+  display: block;
+  color:var(--color_prim_3);
+}
+
+#log{
+
+}
+
+#menu:hover,#log:hover{
+
+  background-color: var(--color_sec_24);
+  color:var(--color_prim_3);
+
+}
+
+
+.topnav ul{
+	margin: 0;
+  padding: 0;
+  list-style: none;
+  /* menu adjustments to flex and equally justified content with space-between - Q:1 */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-between;
+
+}
+
+
+.topnav a{
+	color: #fff;
+	text-decoration: none;
+	padding: .5em 1em;
+}
+
+li{
+	float:left;
+}
+
+
+@media screen and (max-width: 1600px) {
+  li {float: none;}
+}
+
+.topnav li a  {
+	display:block;
+	width:6.5em;
+	height: 1.5em;
+	color: var(--color_sec_22);
+	background-color: var(--color_prim_4);
+	padding: 1em 1em;
+	text-align: center;
+
+}
+
+
+li a.active {
+  background-color: var(--color_sec_22);
+  color: var(--color_prim_3);
+}
+
+li a:hover:not(.active)  {
+  background-color: var(--color_sec_24);
+  color:var(--color_prim_3);
+}
