@@ -37,20 +37,25 @@
         <div class="message">
             <h3>Events interest</h3>
 
-            <p> <input type="radio" name="way" id="way_1" value="Event for adults and groups" checked> <label for="way_1">Event for adults and groups</label> </p>
+            <p> <input type="radio" name="way" id="way_1" value="Event for adults and groups" > <label for="way_1">Event for adults and groups</label> </p>
             <p> <input type="radio" name="way" id="way_2" value="Event for children and schools"> <label for="way_2">Event for children and schools</label> </p>
         </div>
+        <div class="comment">
+            <textarea rows=5 cols=50 id="comment" form="usrform">Enter text here...</textarea>
+        </div>
+
         <div class="date">
             <h3>Date of the event to be scheduled</h3>
             <label for="myDate"></label>
 
-            <input type="date" id="myDate" value="">
+            <input type="date" id="myDate" value="" required>
             <img src="./../static/main/assets/calendar.png" alt="calendar image">
 
         </div>
             <hr>
-            <button class="button" onclick="showValues()" value="Υποβολή">Submit</button>
+            <button class="button" onclick="showValues()" value="submit">Submit</button>
       </form>
-
   </div>
 {% endblock %}
+
+<script src="./../static/main/js/contact.js"></script>

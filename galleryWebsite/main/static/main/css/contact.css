@@ -31,6 +31,20 @@ form , .intro {
   margin-left:10px;
   width:245px;
 }
+.comment input[type=textarea]:focus{
+  background-color: blue;
+}
+
+
+/*Make an effect of transition in the input area - not working successfully */
+.contact input[type=text] {
+  width: 100px;
+  -webkit-transition: width .35s ease-in-out;
+  transition: width .35s ease-in-out;
+}
+.contact input[type=text]:focus {
+  width: 250px;
+}
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: var(--color_sec_22);
