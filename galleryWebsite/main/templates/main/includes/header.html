@@ -1,14 +1,39 @@
+<style>
+	#menu{
+  		grid-area: menu;
+			@font-face {
+				font-family: myFont;
+			}
+			font-size:3em;
+  		background-color: rgba(255,0,0,0.1) ;
+  		-webkit-transition: none;
+  		height: 100%;
+			padding: 30px;
+
+  		}
+		#log{
+	  		grid-area: login;
+	  		/*align-self: end;*/
+	  		background-color:  rgba(255,0,0,0.1) ;
+	  		-webkit-transition: none;
+				font-size:3em;
+	  		height: 100%;
+	  		position: absolute;
+	  		right: 0;
+				text-align: center;
+	  		padding: 5px;
+		}
+	</style>
+
 <!-- header -->
 <div class="header">
 
-	<!-- <a style="grid-area: logo; margin: 0;" href="./"><div class="logo" ></div></a> -->
-
 	<!-- menu -->
-	<div class="topnav dropdown " style="grid-area: menu;"  >
+	<div class="topnav dropdown" style="grid-area: menu;">
 		<button  id="menu" class="btn btn-motive dropbtn">Menu</button>
 		<div class="dropdown-content" >
-				<ul >
-					<li >
+				<ul>
+					<li>
 						<a class="active" href="./">Home</a>
 					</li>
 					<li>

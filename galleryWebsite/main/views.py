@@ -32,7 +32,30 @@ def news(request):
     return render(request=request,
                   template_name='main/news.html',
                   context={"": ''})
+def events(request):
+    return render(request=request,
+                  template_name='main/events.html',
+                  context={"": ''})
 
+def art(request):
+    return render(request=request,
+                  template_name='main/art.html',
+                  context={"": ''})
+
+def map(request):
+    return render(request=request,
+                  template_name='main/map.html',
+                  context={"": ''})
+
+def digitalVisit(request):
+    return render(request=request,
+                  template_name='main/digital-visit.html',
+                  context={"": ''})
+
+def ourFriends(request):
+    return render(request=request,
+                  template_name='main/our-friends.html',
+                  context={"": ''})
 
 def register(request):
 	if request.method == "POST":

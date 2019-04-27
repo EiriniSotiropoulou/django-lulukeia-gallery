@@ -9,9 +9,8 @@ img {
 }
 
 .grid {
-  background-color: inherit;
   margin: 0 0;
-  /* padding: 0 0; */
+  padding-left:15px;
   max-width: 980px;
   /* Q:4 */
   display: grid;

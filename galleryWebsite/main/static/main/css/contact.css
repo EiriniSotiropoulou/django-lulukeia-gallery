@@ -2,11 +2,12 @@
     font-size: 100%;
     position: relative;
     font-family: "Roboto Condensed";
+    padding-left:15px;
 }
 
 
 form , .intro {
-    margin-top: 2em;
+    /* margin-top: 2em; */
     margin-left:1em;
 }
 

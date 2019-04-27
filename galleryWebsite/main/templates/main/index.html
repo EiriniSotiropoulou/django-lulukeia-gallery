@@ -1,40 +1,50 @@
 {% extends "main/home.html" %}
 
+
 {% block content %}
 			<!-- path for assets: ../../static/main/assets/bla.img -->
 			<!-- content -->
-			<h1> This is our Gallery! </h1>
 			<!-- content -->
-			<div class="content">
+			<!-- content -->
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+			<!-- JS loading... -->
+			<script src="./../static/main/js/index.js"></script>
+			<div id="greetings">
+				<h1>Welcome to our Gallery!</h1>
+			</div>
+
+
+
+			<div class="content" >
 
 				<div id="mona">
-					<img  src="../../static/main/assets/mona.jpg"></a>
-					<a><div class="links"><a href="/events">Events</div></a>
+					<a href="/events"><img  src="../../static/main/assets/mona.jpg"></a>
+					<a href="/events"><div class="links">Events</div></a>
+
 				</div>
 
 				<div id="starry">
-					<img  src="../../static/main/assets/starry.jpg" >
-					<div class="links"><a href="/my-digital-visit">My digital visit</a></div>
+					<a href="/digital-visit"><img  src="../../static/main/assets/starry.jpg" ></a>
+					<a href="/digital-visit"><div class="links">My digital visit</div></a>
 				</div>
 
 				<div id="guernica">
-					<img  src="../../static/main/assets/guernica.jpg" ></a>
-					<div class="links"><a href="/map">Map</div>
+					<a href="/map"><img  src="../../static/main/assets/guernica.jpg" ></a>
+					<a href="/map"><div class="links">Map</div></a>
 				</div>
 
 				<div id="dancers">
-					<img  src="../../static/main/assets/dancers.jpg">
-					<div class="links"><a href="/learning">Learning</a></div>
+					<a href="/learning"><img  src="../../static/main/assets/dancers.jpg"></a>
+					<a href="/learning"><div class="links">Learning</div></a>
 				</div>
 
 				<div id="walking">
-					<img  src="../../static/main/assets/oil-painting-underwater-paintings-isabel-emrich-6.jpg" >
-					<div class="links"><a href="/art">Art</a></div>
+					<a href="/art"><img  src="../../static/main/assets/oil-painting-underwater-paintings-isabel-emrich-6.jpg" ></a>
+					<a href="/art"><div class="links">Art</div></a>
 				</div>
-
 				<div id="flowers">
-					<img  src="../../static/main/assets/flowers.jpg" >
-					<div class="links"><a href="/contact">Contact</a></div>
+					<a href="/contact"><img  src="../../static/main/assets/flowers.jpg" ></a>
+					<a href="/contact"><div class="links">Contact</div></a>
 				</div>
 			</div>
 

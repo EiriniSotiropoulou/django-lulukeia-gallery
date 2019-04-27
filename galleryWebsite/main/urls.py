@@ -25,5 +25,12 @@ urlpatterns = [
     path("login", views.login_request, name="login"),
     path("contact", views.contact, name="contact"),
     path("about", views.about, name="about"),
+    path("our-friends", views.ourFriends, name="our-friends"),
+    path("map", views.map, name="map"),
+    path("digital-visit", views.digitalVisit, name="digital-visit"),
+    path("news", views.news, name="news"),
+    path("art", views.art, name="art"),
+    path("learning", views.learning, name="learning"),
+    path("events", views.events, name="events"),
     path("<single_slug>", views.single_slug, name="single_slug"),
 ]

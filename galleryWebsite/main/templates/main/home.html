@@ -24,9 +24,19 @@
 			<link href="/static/main/css/preload.css" rel="stylesheet">
 			<!--  Favicon loading... -->
 			<link rel="shortcut icon" type="image/png" src="./../static/main/assets/pallete.png">
-
+			<script src="/static/main/js/jquery.js"></script>
 	</head>
 
+	<style>
+	@font-face {
+	   font-family: myFont;
+	   src: url("./../static/main/AC-Cyberella_Unicode.otf");
+	}
+
+	* {
+	   font-family: myFont;
+	}
+	</style>
 
 	<body>
 		<!--  Load the header. P.S. CSS are loaded with link reference in the beginning of that file! -->
@@ -35,6 +45,8 @@
 		{% endblock %}
 
 		<!-- Wrapper is responsible for the margin and padding between the pages! -->
+		<!-- JS loading... -->
+		<script src="./../static/main/js/index.js"></script>
 		<div class="wrapper">
 			{% block content %}
 			{% endblock %}

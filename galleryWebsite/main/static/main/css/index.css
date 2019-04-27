@@ -2,57 +2,54 @@ html, body {
   font-size:16px;
   width:100vw;
   height: 100vh;
-  font-family: "Roboto Condensed";
-  overflow: auto;
+  overflow:visible;
+  /* font-family: "Roboto Condensed"; */
   color: var(--color_sec_22);
   /*-ms-overflow-style: scrollbar;*/
   -webkit-font-smoothing: antialiased;
   margin: 0 0 0 0;
 }
 
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    image-resolution: snap;
+    position: static;
+    top: -25px;
+}
+
+#greetings {
+  font-weight: 900;
+  font-size: 3.5em;
+  padding-left: 30%;
+  color: var(--color_sec_13);
+}
+
+#greetings .letter {
+  display: inline-block;
+  line-height: 1em;
+
+}
+
 .wrapper{
-  padding-top: 25vh;
+  padding-top: 28vh;
   padding-bottom: 5vh;
-  background-color: var(----color_prim_4);
-  padding-left: 5vh;
-}
+  background-color: rgba(255,0,0,0.1);
+  padding-right: 1vh;
 
-.content{
-  overflow-y: scroll;
-  height: 50%;
-  display: grid;
-  width: 100vw;
-  height: 100vh;
-  padding:0;
-  overflow-x: hidden;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 30% 30% 30% 50%;
-  grid-template-areas:
-  "mona walking walking"
-  "mona starry starry"
-  "flowers flowers dancers"
-  "guernica guernica dancers" ;
 }
-
 
 .links{
   color: white;
-  font-size: 6em;
+  font-size: 5em;
+
 }
 
-.links:hover{
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  color: var(--color_sec_22);
-  opacity: 1;
+.content>div:hover{
+  -webkit-transition: none;
+  transition: none;
 }
-.content:hover{
-  -webkit-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
-  color: var(--color_sec_22);
-  opacity: 1;
-}
-
 
 #mona{
   grid-area: mona;
@@ -65,12 +62,14 @@ html, body {
   height:100%;
   object-fit: cover;
   object-position: 0 15%;
+
 }
 #mona .links{
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
 }
 
 
@@ -89,7 +88,6 @@ html, body {
   position: absolute;
   top: 50%;
   left: 50%;
-
   transform: translate(-50%, -50%);
 }
 
@@ -143,10 +141,12 @@ html, body {
   object-fit: cover;
   object-position: 0 35%;
 }
+
 #walking .links{
   position: absolute;
   top: 50%;
   left: 50%;
+
   transform: translate(-50%, -50%);
 }
 
@@ -160,11 +160,36 @@ html, body {
   height:100%;
   object-fit: cover;
   object-position: 0 35%;
+
 }
 
 #dancers .links{
   position: absolute;
   top: 50%;
   left: 50%;
+
   transform: translate(-50%, -50%);
+}
+
+
+.content{
+  /*overflow-y: scroll;*/
+  height: 50%;
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  padding:0;
+  /*  In order to have good title of the first page */
+  padding-top:15px;
+
+  margin-bottom: 20%;
+    /*overflow-x: hidden;*/
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 30% 30% 30% 50%;
+  grid-template-areas:
+  "mona walking walking"
+  "mona starry starry"
+  "flowers flowers dancers"
+  "guernica guernica dancers" ;
+
 }
