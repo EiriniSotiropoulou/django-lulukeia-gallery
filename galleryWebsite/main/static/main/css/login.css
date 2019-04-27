@@ -1,0 +1,31 @@
+.login-btn{
+  text-align: center;
+  text-decoration: none;
+  background-color: var(--color_sec_22);
+  color: var(--color_prim_3);
+  font-family: "Roboto Condensed";
+  border-radius: 0;
+  border: none;
+  font-size: 26px;
+  padding: 12px 30px;
+  -webkit-transition: all .25s ease;
+  transition: all .25s ease;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  border-radius: 5px;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.34) inset,
+                      0 2px 0 -1px rgba(0,0,0,0.13),
+                      0 3px 0 -1px rgba(0,0,0,0.08),
+                      0 3px 13px -1px rgba(0,0,0,0.21);
+  cursor:pointer;
+
+}
+
+.login-btn:hover {
+    background-color: var(--color_prim_4);
+    color: var(--color_sec_22);
+}
+
+.login-btn:hover:active {
+    background-color: var(--color_prim_4);
+    color: var(--color_sec_22);
+}

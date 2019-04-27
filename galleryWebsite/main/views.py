@@ -11,7 +11,7 @@ from .models import Gallery
 def homepage(request):
     return render(request=request,
                   template_name='main/index.html',
-                  context={"paintings": ''})
+                  context={"": ''})
 
 
 def contact(request):
@@ -26,11 +26,6 @@ def about(request):
 def learning(request):
     return render(request=request,
                   template_name='main/learning.html',
-                  context={"": ''})
-
-def login(request):
-    return render(request=request,
-                  template_name='main/login.html',
                   context={"": ''})
 
 def news(request):
