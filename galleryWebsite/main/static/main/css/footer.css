@@ -6,7 +6,6 @@ figure {
 }
 
 .museumPic{
-
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -14,7 +13,7 @@ figure {
 }
 
 .facebook{
-width:3%;
+  width:3%;
 }
 .instagram{
   width:3%;
@@ -22,7 +21,6 @@ width:3%;
 .youtube{
   width:3%;
 }
-
 
 a,
 a:hover,
@@ -32,7 +30,7 @@ a:active {
     color: inherit;
 }
 
-a {
+a{
     -webkit-transition: all .25s ease-in-out;
     transition: all .25s ease-in-out;
 }
@@ -44,26 +42,23 @@ a {
 .ct-footer {
     color: var(--color_sec_12);
     background-color: var(--color_sec_23);
-    /* position: sticky; */
-    margin-bottom: 0px;
-    bottom: 0;
-    position: relative;
+    position: sticky;
+    /* margin-right: 30px; */
     z-index: -1;
-
 }
 
 .ct-footer-pre {
     width: 100%;
-
     padding: 0 0 0 0;
     border-bottom: 1px solid #555;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
+  }
 
 @media (min-width:1200px) {
     .ct-footer-pre {
         display: table;
     }
+
     .ct-footer-pre > .inner {
         display: table-row;
         vertical-align: middle;
@@ -75,6 +70,7 @@ a {
         padding-top: 30px;
     }
 }
+
 /*Join and button...*/
 .ct-footer-pre span {
     font-family: 'Roboto Condensed';
@@ -88,7 +84,6 @@ a {
 .ct-footer-pre .form-group {
     position: relative;
     margin: 0;
-
 }
 
 .ct-footer-pre .form-group:before,
@@ -224,11 +219,10 @@ a {
 .ct-footer-post {
     color: var(--color_prim_4);
     font-family: "Roboto Condensed";
-    /* padding: 10px 0; */
+    padding: 10px 0;
     /*relative important!*/
     position: relative;
     height: 20px;
-
 }
 
 .ct-footer-post .inner-left ,
@@ -252,7 +246,7 @@ a {
 
 .ct-footer-post a {
     color: var(--color_sec_13);
-
+    f
 }
 
 /* .ct-footer-post a:hover {
@@ -296,7 +290,6 @@ a {
     padding: 0 20px 0 0px;
     display: block;
     text-align: right;
-    margin-right: 20px;
 }
 
 .ct-footer--with-button {
