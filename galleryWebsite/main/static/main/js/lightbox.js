@@ -2,9 +2,7 @@
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
-// Al hacer click en una imagen se abra su version grande
 
-// Obtener la galeria de imágenes
 var getImages = function getImages(container) {
 	return [].concat(_toConsumableArray(container.querySelectorAll('img')));
 };
@@ -30,7 +28,7 @@ var openLightboxEvent = function openLightboxEvent(container, gallery, larges, d
 	container.addEventListener('click', function (e) {
 		var el = e.target,
 		    i = gallery.indexOf(el);
-		if (el.tagName === 'IMG') {
+		if (el.tagName === 'img') {
 			openLightbox(gallery, i, larges, descriptions);
 		}
 	});
@@ -99,6 +97,7 @@ var navigateLightbox = function navigateLightbox(lightboxElement, i, larges, des
 };
 
 var lightbox = function lightbox(container) {
+	console.log("container:",container);
 	var images = getImages(container),
 	    larges = getLargeImages(images),
 	    descriptions = getDescriptions(images);
