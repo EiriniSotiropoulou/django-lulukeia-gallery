@@ -25,7 +25,7 @@ SECRET_KEY = '4tua0um*_4(lzuz($o@chs0rm9m)6_9#9_f$$xzp=x(3g6y5i1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.1.85','localhost']
 
 
 TINYMCE_DEFAULT_CONFIG = {

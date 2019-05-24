@@ -6,13 +6,23 @@ from django.contrib.auth import login, logout, authenticate
 from django.contrib import messages
 from django.views.generic import ListView
 from .forms import NewUserForm
+#csrf stuff
+from django.views.decorators.cache import cache_page
+from django.views.decorators.csrf import csrf_protect,csrf_exempt
 from .models import Gallery
+
+
+
 
 def homepage(request):
     return render(request=request,
                   template_name='main/index.html',
                   context={"": ''})
 
+def eShop(request):
+    return render(request=request,
+                  template_name='main/e-shop.html',
+                  context={"": ''})
 
 def contact(request):
     return render(request=request,
@@ -57,6 +67,9 @@ def ourFriends(request):
                   template_name='main/our-friends.html',
                   context={"": ''})
 
+@cache_page(60 * 15)
+@csrf_exempt
+@csrf_protect
 def register(request):
 	if request.method == "POST":
 		form = NewUserForm(request.POST)
@@ -72,7 +85,7 @@ def register(request):
 				messages.error(request, f"{msg}: {form.error_messages[msg]}")
 
 
-	form = NewUserForm
+	form = NewUserForm();
 	return render(request,
 				  "main/register.html",
 				  context={"form":form})

@@ -29,6 +29,7 @@ urlpatterns = [
     path("map", views.map, name="map"),
     path("digital-visit", views.digitalVisit, name="digital-visit"),
     path("news", views.news, name="news"),
+    path("e-shop", views.eShop, name="e-shop"),
     path("art", views.art, name="art"),
     path("learning", views.learning, name="learning"),
     path("events", views.events, name="events"),

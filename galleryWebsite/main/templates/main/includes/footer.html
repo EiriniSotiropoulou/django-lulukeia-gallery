@@ -1,19 +1,28 @@
+
 <footer class="ct-footer">
 	<div class="container">
-		<form name="contentForm" enctype="multipart/form-data" method="post" action="">
+
 				<div class="ct-footer-pre text-center-lg">
 						<div class="inner">
 								<span>Join Lulukeia Gallery to receive suggestions, news &amp; events!</span>
 						</div>
 						<div class="inner">
 								<div class="form-group">
-										<input name="formfields[nl_email]" id="nl_email"
+									<form action='.' method="post">
+										{% csrf_token %}
+										
+											<label for="nl_email" class="sr-only">Your email: </label>
+												<input id="nl_email" type="text" name="formfields[nl_email]" class="validate[required]" placeholder="Enter your email address" type="text"
+												value="{{ current_email }}">
+												<button type="submit" class="btn btn-motive">Join</button>
+										</form>
+										<!-- <input name="formfields[nl_email]" id="nl_email"
 										class="validate[required]" placeholder="Enter your email address" type="text" value=""> <label for="nl_email"
-										class="sr-only"></label> <button type="submit" class="btn btn-motive">Join</button>
+										class="sr-only"></label> <button type="submit" class="btn btn-motive" action="register">Join</button> -->
 								</div>
 						</div>
 				</div>
-		</form>
+
 		<ul class="ct-footer-list text-center-sm">
 				<li>
 						<h2 class="ct-footer-list-header">
@@ -21,13 +30,13 @@
 						</h2>
 						<ul>
 								<li>
-										<a href="">About</a>
+										<a href="/about">About</a>
 								</li>
 								<li>
-										<a href="">Events</a>
+										<a href="/events">Events</a>
 								</li>
 								<li>
-										<a href="">News</a>
+										<a href="/news">News</a>
 								</li>
 						</ul>
 				</li>
@@ -37,13 +46,13 @@
 						</h2>
 						<ul>
 								<li>
-										<a href="">Art</a>
+										<a href="/art">Art</a>
 								</li>
 								<li>
-										<a href="">Must see</a>
+										<a href="/digital-visit">Must see</a>
 								</li>
 								<li>
-										<a href="">Book your tickets</a>
+										<a href="/book-your-tickets">Book your tickets</a>
 								</li>
 
 						</ul>
@@ -54,14 +63,14 @@
 						</h2>
 						<ul>
 								<li>
-										<a href="">Sponsorships</a>
+										<a href="/our-friends">Sponsorships</a>
 								</li>
 								<li>
-										<a href="">e-Shop</a>
+										<a href="/e-shop">e-Shop</a>
 								</li>
 
 								<li>
-										<a href="">Activities &amp; Campaigns</a>
+										<a href="/art">Art &amp; Paintings</a>
 								</li>
 						</ul>
 				</li>
@@ -77,22 +86,30 @@
 						</div>
 						<div class="col-sm-6 col-md-3">
 								<address>
-										<span>Lulukeia Gallery<br></span>123 Patras Street<br>
-										Patras, Achaia, 26223<br>
-										Phone: <a href="tel:5555555555">(555) 555-8899</a></span>
+										<span>
+											Lulukeia Gallery<br>123 Patras Street<br>
+											Patras, Achaia, 26223<br>
+											Phone: <a href="tel:5555555555">(555) 555-8899</a>
+										</span>
 								</address>
 
 
 								<ul class="ct-socials list-unstyled list-inline">
 										<li>
-												<a href="#" target="_blank"><img alt="facebook" src="static/main/assets/footer/fbLogo.png" class="facebook"></a>
+												<a href="/" target="_blank">
+													<img alt="facebook" src="static/main/assets/footer/fbLogo.png" class="facebook">
+												</a>
 												</li>
 
 												<li>
-														<a href="#" target="_blank"><img alt="youtube" src="static/main/assets/footer/ytLogo.png" class="youtube"></a>
+														<a href="/" target="_blank">
+															<img alt="youtube" src="static/main/assets/footer/ytLogo.png" class="youtube">
+														</a>
 												</li>
 												<li>
-														<a href="#" target="_blank"><img alt="instagram" src="static/main/assets/footer/instaLogo.png" class="instagram"></a>
+														<a href="/" target="_blank">
+															<img alt="instagram" src="static/main/assets/footer/instaLogo.png" class="instagram">
+														</a>
 												</li>
 
 										</ul>
@@ -109,7 +126,7 @@
 						 Copyright © 2019 for WebSite designed by Dafni-Spyridoula Ventza and Eirini Sotiropoulou on
 							 <a href="https://github.com/dafni-ventza/lulukeia-gallery-web.git" target="_blank"> GitHub</a> for the purposes of
 							 <a href="https://eclass.upatras.gr/courses/EE767/" target="_blank"> Web Programming Course</a>.
-					</p>
+						 </p>
 			</div>
 	</div>
 

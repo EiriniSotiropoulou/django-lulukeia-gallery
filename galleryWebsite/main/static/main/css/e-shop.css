@@ -1,0 +1,19 @@
+table#items {
+    border-collapse: collapse;
+}
+#items tr {
+    background-color: #eee;
+    border-top: 1px solid #fff;
+}
+#items tr:hover {
+    background-color: #ccc;
+}
+#items th {
+    background-color: #fff;
+}
+#items th, #items td {
+    padding: 3px 5px;
+}
+#items td:hover {
+    cursor: pointer;
+}

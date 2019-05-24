@@ -126,30 +126,28 @@ html, body {
   }
 
 
-  li a.active {
+    .topnav li a.active {
     background-color: var(--color_sec_22);
     color: var(--color_prim_3);
   }
 
-  li a:hover:not(.active)  {
+   .topnav li a:hover:not(.active)  {
     background-color: var(--color_sec_24);
     color:var(--color_prim_3);
   }
   #menu{
   		grid-area: menu;
-
-    		background-color: rgba(255,0,0,0.1) ;
-    		-webkit-transition: none;
-    		height: 100%;
-
-  		}
-  		#log{
-  		grid-area: login;
-  		align-self: end;
-  		background-color:  rgba(255,0,0,0.1) ;
-    		-webkit-transition: none;
-    		height: 100%;
-    		position: absolute;
-    		right: 0;
-    		padding: 0;
-  		}
+      background-color: rgba(255,0,0,0.1) ;
+    	-webkit-transition: none;
+    	height: 100%;
+	}
+	#log{
+		grid-area: login;
+		align-self: end;
+		background-color:  rgba(255,0,0,0.1) ;
+		-webkit-transition: none;
+		height: 100%;
+		position: absolute;
+		right: 0;
+		padding: 0;
+	}

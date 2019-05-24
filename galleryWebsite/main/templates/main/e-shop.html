@@ -1,0 +1,42 @@
+{% extends "main/home.html" %}
+
+{% block content %}
+  <div class="grid">
+    <h3>
+      E-Shop
+    </h3>
+    <h1>
+      What would you like to buy?
+    </h1>
+
+    <article>
+      <table id="items">
+      <tr>
+          <th>&nbsp;</th>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Price</th>
+      </tr>
+      <tr>
+          <td><a href="">Shop</a></td>
+          <td>Apples</td>
+          <td>Blah blah blah blah</td>
+          <td>10.23</td>
+      </tr>
+      <tr>
+          <td><a href="">Shop</a></td>
+          <td>Bananas</td>
+          <td>Blah blah blah blah</td>
+          <td>11.45</td>
+      </tr>
+      <tr>
+          <td><a href="">Shop</a></td>
+          <td>Oranges</td>
+          <td>Blah blah blah blah</td>
+          <td>12.56</td>
+      </tr>
+      </table>
+    </article>
+  </div>
+  <script src="./../static/main/js/e-shop.js"></script>
+{% endblock %}
