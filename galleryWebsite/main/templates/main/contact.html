@@ -13,7 +13,10 @@
       <div class="intro">
           <p style="font-style:italic;">Fill in with latin characters, please...</p>
         </div>
-      <form action="/form-handling" method="post">
+      <form action="/thanks" method="post">
+
+          {% csrf_token %}
+          {{ form.as_p }}
 
         <div class="naming">
           <h3>Full Name</h3>

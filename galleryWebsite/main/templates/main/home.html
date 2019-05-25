@@ -20,25 +20,37 @@
 			<!-- jQuery library -->
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+			<!-- Compiled and minified CSS -->
+	    <!-- <link href="{% static 'main/css/materialize.css' %}" rel="stylesheet"> -->
+	    <!-- Compiled and minified JavaScript -->
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
 			<!-- Latest compiled JavaScript -->
 			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-			<!-- Adding main CSS -->
-	    <link href="/static/main/css/color2.css" rel="stylesheet">
-			<link href="/static/main/css/index.css" rel="stylesheet">
-			<link href="/static/main/css/footer.css" rel="stylesheet">
-			<link href="/static/main/css/header.css" rel="stylesheet">
-			<!-- Adding some extra CSS -->
-			<link href="/static/main/css/about.css" rel="stylesheet">
-			<link href="/static/main/css/contact.css" rel="stylesheet">
-			<link href="/static/main/css/register.css" rel="stylesheet">
-			<link href="/static/main/css/login.css" rel="stylesheet">
-			<link href="/static/main/css/preload.css" rel="stylesheet">
-			<link href="/static/main/css/e-shop.css" rel="stylesheet">
+			<!-- Add latest jQuery and fancybox files -->
+			<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+			<!--  For loading the messages on form submitting -->
+			<script>	M.AutoInit(); </script>
+			<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+			<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 
+			<!-- Adding main CSS -->
+	    <link href="{% static '/main/css/color2.css' %}" rel="stylesheet">
+			<link href="{% static 'main/css/index.css' %}" rel="stylesheet">
+			<link href="{% static 'main/css/footer.css' %}" rel="stylesheet">
+			<link href="{% static 'main/css/header.css' %}" rel="stylesheet">
+			<!-- Adding some extra CSS -->
+			<link href="{% static 'main/css/about.css' %}" rel="stylesheet">
+			<link href="{% static 'main/css/contact.css' %}" rel="stylesheet">
+			<link href="{% static 'main/css/register.css" rel="stylesheet">
+			<link href="{% static 'main/css/login.css' %}" rel="stylesheet">
+			<link href="{% static 'main/css/preload.css' %}" rel="stylesheet">
+			<link href="{% static 'main/css/e-shop.css' %}" rel="stylesheet">
+			<link href="{% static 'main/css/art.css' %}" rel="stylesheet">
 			<!--  Favicon loading... -->
-			<link rel="shortcut icon" type="image/png" src="./../static/main/assets/pallete.png">
-			<script src="/static/main/js/jquery.js"></script>
-			<script src="/static/main/js/lightbox.js"></script>
+			<link rel="shortcut icon" type="image/png" src="/../static/main/assets/pallete.png">
+
 
 
 	</head>
@@ -62,8 +74,9 @@
 		font-size:80%;
 		color:var(--color_sec_13);
 	}
-	<link href=".././static/main/css/art.css" rel="stylesheet">
+
 	</style>
+
 
 	<body>
 		<!--  Load the header. P.S. CSS are loaded with link reference in the beginning of that file! -->
@@ -71,9 +84,8 @@
 			{% block header %}
 				{% include "main/includes/header.html" %}
 			{% endblock %}
+			{% include "main/includes/messages.html" %}
 		</div>
-
-
 
 		<div class="wrapper">
 			{% block content %}

@@ -2,23 +2,30 @@
 
 {% block content %}
   <div class="grid">
-    <h3>
-      Art
-    </h3>
     <h1>
-      Our Exhibits!
+      Art
     </h1>
-
+    <h3>
+      Our Exhibits!
+    </h3>
+    <!--  Using fancybox - JavaScript lightbox library for presenting various types of media.
+      Responsive, touch-enabled and customizable. -->
     <div class="gallery-container" id="gallery-container">
       <div class="gallery-item">
-        <img class="gallery-img" src="static/main/assets/flowers.jpg" alt="Descripcion 1">
+        <a data-fancybox="gallery" href="static/main/assets/flowers.jpg"><img class="gallery-img" src="static/main/assets/flowers.jpg" alt="Descripcion 1"></a>
+        </div>
+      <div class="gallery-item">
+        <a data-fancybox="gallery" href="static/main/assets/guernica.jpg"><img class="gallery-img" src="static/main/assets/guernica.jpg" alt="Descripcion 2"></a>
       </div>
       <div class="gallery-item">
-        <img class="gallery-img" src="static/main/assets/guernica.jpg" alt="Descripcion 2">
+        <a data-fancybox="gallery" href="static/main/assets/walking.jpg"><img class="gallery-img" src="static/main/assets/walking.jpg" alt="Descripcion 3"></a>
       </div>
       <div class="gallery-item">
-        <img class="gallery-img" src="static/main/assets/walking.jpg" alt="Descripcion 3">
+        <a data-fancybox="gallery" href="static/main/assets/starry.jpg"><img class="gallery-img" src="static/main/assets/starry.jpg" alt="Descripcion 4"></a>
       </div>
+      <div class="gallery-item">
+        <a data-fancybox="gallery" href="static/main/assets/dancers.jpg"><img class="gallery-img" src="static/main/assets/dancers.jpg" alt="Descripcion 5"></a>
+        </div>
     </div>
   </div>
   <!-- <script src="../static/main/js/lightbox.js"></script> -->

@@ -33,5 +33,6 @@ urlpatterns = [
     path("art", views.art, name="art"),
     path("learning", views.learning, name="learning"),
     path("events", views.events, name="events"),
+    path("thanks", views.thanks, name="thanks"),
     path("<single_slug>", views.single_slug, name="single_slug"),
 ]
