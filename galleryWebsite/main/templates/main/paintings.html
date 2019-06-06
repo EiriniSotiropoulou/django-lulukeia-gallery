@@ -1,0 +1,34 @@
+<!-- {% extends 'main/home.html' %} -->
+
+{% block content %}
+<ul>
+      {% for  p in all_paints %}
+        <li style="float:none;margin: auto;list-style-type:none;">
+          <a href="{% url 'main/art/paintings:details/' p.paintid %}">{{p.title}}</a>
+          <br>
+        </li>
+
+        <!-- Keywords: {{p.keywords}} -->
+        <!-- <br> -->
+      {% endfor %}
+</ul>
+
+<!--  Search process -->
+<form action="" method="GET">
+  <input type="text" name="q" placeholder="Search..." value={{request.GET.q}}>
+  <input type="submit" value="Search">
+
+</form>
+
+  <h1>Paint </h1>
+  {% for p in results %}
+    ID: {{ p.paintid }} <br>
+    Title: {{ p.title }} <br>
+    Material: {{ p.material }} <br>
+    Painter: {{ p.painterid }} <br>
+    <!-- {{ p.paginator.count}}
+    {{p.paginator.pages_range}}
+    {{ p.has_next }} -->
+  {% endfor %}
+
+{% endblock %}

@@ -3,7 +3,7 @@ html, body {
   width:100vw;
   height: 100vh;
   overflow:visible;
-  /* font-family: "Roboto Condensed"; */
+  font-family: "Roboto Condensed"!important;
   color: var(--color_sec_22);
   /*-ms-overflow-style: scrollbar;*/
   -webkit-font-smoothing: antialiased;

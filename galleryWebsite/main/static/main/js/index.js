@@ -3,31 +3,31 @@
 $(document).ready(function() {
   // $(".content").css("margin-top", $(".header").height());
   // $(".content").css("margin-bottom", $("footer").height());
-  // let padd=parseInt($("#menu").css("padding-right").replace(/px/,""));
-  // let width=parseInt($("#menu").css("width").replace(/px/,""));
+  // let padd=parseInt($("#ourmenu").css("padding-right").replace(/px/,""));
+  // let width=parseInt($("#ourmenu").css("width").replace(/px/,""));
   //
   // let new_width=width-padd+"px";
   // console.log(new_width);
   $(".dropdown-content").css("width",$(".dropdown-content li").css("width"));
 
-  $("#log").css("width",$("#menu").css("width"));
+  $("#ourlog").css("width",$("#ourmenu").css("width"));
 
-  $("div.header>a").css("width",$("div.logo").css("width"));
+  $("div.header>a").css("width",$("div.ourlog").css("width"));
   // change back and forward the colors of the menu button when the dropdown is showing
 
   $(".dropdown").mouseenter(function(){
 
-  	if($(".dropdown-content").css("display")=="none"){
+  	if($(".dropdownMenu-content").css("display")=="none"){
   		return;
   	}
-	$("#menu").css("background-color", "var(--color_sec_24)");
-	$("#menu").css("color", "var(--color_prim_3)");
+	$("#ourmenu").css("background-color", "var(--color_sec_24)");
+	$("#ourmenu").css("color", "var(--color_prim_3)");
 	})
 
   $(".dropdown").mouseleave(function(){
 
-	    $("#menu").css("background-color", "rgba(255,0,0,0.1) ");
-      $("#menu").css("color", "black");
+	    $("#ourmenu").css("background-color", "rgba(255,0,0,0.1) ");
+      $("#ourmenu").css("color", "black");
   })
 
   $(".content>div").mouseenter(function(){

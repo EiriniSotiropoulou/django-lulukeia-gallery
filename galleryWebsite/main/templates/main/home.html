@@ -13,7 +13,7 @@
 
 			<!-- To ensure proper rendering and touch zooming, Bootstrap good too -->
 			<meta charset="utf-8">
-			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
 			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
@@ -53,13 +53,14 @@
 
 
 
+
 	</head>
 
 	<style>
-	@font-face {
+	/* @font-face {
 	   font-family: myFont;
 	   src: url("./../static/main/AC-Cyberella_Unicode.otf");
-	}
+	} */
 
 	* {
 	   font-family: myFont;
@@ -79,6 +80,7 @@
 
 
 	<body>
+
 		<!--  Load the header. P.S. CSS are loaded with link reference in the beginning of that file! -->
 		<div class="container-fluid">
 			{% block header %}
@@ -100,6 +102,5 @@
 	</body>
 	<!-- Wrapper is responsible for the margin and padding between the pages! -->
 	<!-- JS loading... -->
-	<!-- <script src="./../static/main/js/index.js"></script>
-	<script src="./../static/main/js/lightbox.js"></script> -->
+
 	</html>

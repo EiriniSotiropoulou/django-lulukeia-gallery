@@ -1,18 +1,36 @@
 from django.shortcuts import render, redirect
-#from .models import MusicBase, MusicCategory, MusicSeries
 from django.http import HttpResponse
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, logout, authenticate
 from django.contrib import messages
-from django.views.generic import ListView
-from .forms import NewUserForm
+# for searching
+from django.db.models import Q
+# from example.config import pagination
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.views import generic
+
+from django.views.generic import ListView,View
+from django.views.generic.edit import CreateView,UpdateView,DeleteView
+from .forms import UserForm
 #csrf stuff
 from django.views.decorators.cache import cache_page
 from django.views.decorators.csrf import csrf_protect,csrf_exempt
-from .models import Gallery
+from .models import *
+from django.shortcuts import render, redirect
+# needed for query merging
+from itertools import chain
 
 
+class IndexView(generic.ListView):
+    template_name='main/paintings.html'
+    context_object_name="all_paints"
+    def get_queryset(self):
+        return Paint.objects.all()
 
+class DetailView(generic.DetailView):
+    model=Paint
+    template_name='main/details.html'
+    # context_object_name="paint"
 
 def homepage(request):
     return render(request=request,
@@ -46,11 +64,20 @@ def events(request):
     return render(request=request,
                   template_name='main/events.html',
                   context={"": ''})
-
 def art(request):
     return render(request=request,
                   template_name='main/art.html',
                   context={"": ''})
+
+# def paintings(request):
+#
+#     painters=Painter.objects.all()
+#
+#     paints=Paint.objects.all()
+#     context={ 'paints': paints,'painters': painters}
+#     return render(request,'main/paintings.html',context)
+
+
 
 def map(request):
     return render(request=request,
@@ -67,28 +94,38 @@ def ourFriends(request):
                   template_name='main/our-friends.html',
                   context={"": ''})
 
-@cache_page(60 * 15)
-@csrf_exempt
-@csrf_protect
-def register(request):
-	if request.method == "POST":
-		form = NewUserForm(request.POST)
-		if form.is_valid():
-			user = form.save()
-			username = form.cleaned_data.get('username')
-			messages.success(request, f"New Account Created: {username}")
-			login(request, user)
-			messages.info(request, f"You are now logged in as {username}")
-			return redirect("main:homepage")
-		else:
-			for msg in form.error_messages:
-				messages.error(request, f"{msg}: {form.error_messages[msg]}")
 
 
-	form = NewUserForm();
-	return render(request,
-				  "main/register.html",
-				  context={"form":form})
+class UserFormView(View):
+    form_class=UserForm
+    template_name='main/register.html'
+
+    def get(self,request):
+        form=self.form_class(None)
+        return render(request,self.template_name,{'form':form})
+
+    def post(self,request):
+        form=self.form_class(request.POST)
+
+        if form.is_valid():
+            user=form.save(commit=False)
+
+            # cleaned (normalized) data
+            username=form.cleaned_data['username']
+            password=form.cleaned_data['password']
+            user.set_password(password)
+            user.save()
+
+            # returns User objects if credentials are correct
+            user=authenticate(username=username, password=password)
+
+            if user is not None:
+
+                if user.is_active:
+                    login(request,user)
+                    return redirect('/')
+
+        return render(request,self.template_name, {'form':form})
 
 def logout_request(request):
     logout(request)
@@ -116,36 +153,43 @@ def login_request(request):
                     template_name = "main/login.html",
                     context={"form":form})
 
-def single_slug(request, single_slug):
-    categories = [c.category_slug for c in MusicCategory.objects.all()]
-    if single_slug in categories:
-        matching_series = MusicSeries.objects.filter(music_category__category_slug=single_slug)
-        series_urls = {}
+def search(request):
+    template_name= 'main/paintings.html'
+    paint_list=Paint.objects.all()
+    painter_list=Painter.objects.all()
+    object_list = list(chain(paint_list, painter_list))
 
-        for m in matching_series.all():
-            #filter is giving just the list of the objects
-            part_one = MusicBase.objects.filter(music_series__music_series=m.music_series).earliest("music_published")
-            series_urls[m] = part_one.music_slug
+    #q is query valuable
+    query=request.GET.get('q')
 
-        return render(request=request,
-                      template_name='main/category.html',
-                      context={"music_series": matching_series, "part_ones": series_urls})
-
-    musics=[m.music_slug for m in MusicBase.objects.all()]
-    if single_slug in musics:
-        #get gives us the specific page - slug music
-        this_music= MusicBase.objects.get(music_slug=single_slug)
-        music_from_series= MusicBase.objects.filter(music_series__music_series=this_music.music_series).order_by("music_published")
-        #get this specific index from the list
-        this_music_idx = list(music_from_series).index(this_music)
+    paginator=Paginator(object_list,1)
+    page_request_var="page"
+    page=request.GET.get(page_request_var)
 
 
-        return render(request=request,
-                      template_name='main/music.html',
-                      context={"music": this_music,"sidebar":music_from_series,
-                      "this_music_idx":this_music_idx})
+    # check on the query error in case of gap etc...
+    if query:
+        # define on what you are searching
+        results=Paint.objects.filter(
+        Q(title__icontains=query) |
+        Q(keywords__icontains=query)|
+        Q(material__icontains=query)
+        ).distinct()
+    else:
+        results=Paint.objects.all()
+    # pages=paginator(request,results,num=1)
 
+    try:
+        items=paginator.page(page)
+    except PageNotAnInteger:
+        items=paginator.page(1)
+    except EmptyPage:
+        items=paginator.page(paginator.num_pages)
 
-
-
-    return HttpResponse(f"'{single_slug}' does not correspond to anything we know of!")
+    context={
+        'results':results,
+        'query': query,
+        'items':items,
+        "page_request_var":page_request_var,
+    }
+    return render(request,template_name,context)

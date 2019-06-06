@@ -1,5 +1,5 @@
 <style>
-	#menu{
+	#ourmenu{
   		grid-area: menu;
 			@font-face {
 				font-family: myFont;
@@ -11,7 +11,7 @@
 			padding: 30px;
 
   		}
-		#log{
+		#ourlog{
 	  		grid-area: login;
 	  		/*align-self: end;*/
 	  		background-color:  rgba(255,0,0,0.1) ;
@@ -26,11 +26,11 @@
 	</style>
 
 <!-- header -->
-<div class="header">
+<div class="headerMenu">
 	<!-- menu -->
 	<div class="topnav dropdown" style="grid-area: menu;">
-		<button  id="menu" class="btn btn-motive dropbtn">Menu</button>
-		<div class="dropdown-content" >
+		<button  id="ourmenu" class="btn btn-motive dropbtn">Menu</button>
+		<div class="dropdownMenu-content">
 				<ul>
 					<li>
 						<a class="active" href="./">Home</a>
@@ -60,6 +60,6 @@
 		</div>
 	</div>
 
-	<button id="log" class="btn btn-motive dropbtn"><a href="../login">Log in</a></button>
+	<button id="ourlog" class="btn btn-motive dropbtn"><a href="../login">Log in</a></button>
 
 </div>

@@ -4,7 +4,7 @@ html, body {
   height: 100vh;
   overflow-y: visible;
   overflow-x: hidden;
-  /* font-family: "Roboto Condensed"; */
+  font-family: "Roboto Condensed" !important;
   color: var(--color_sec_22);
   -ms-overflow-style: scrollbar;
   -webkit-font-smoothing: antialiased;
@@ -21,7 +21,7 @@ html, body {
 }
 
 
-.header{
+.headerMenu{
   width: 100vw;
   height: 25vh;
   display: grid;
@@ -34,8 +34,9 @@ html, body {
   /*align-items: start;*/
   background: url("../assets/lulukeiagallery.png");
   /* Center and scale the image nicely */
-  background-position: 0% 10%  ;
+  background-position: 0% 10%;
   background-size: cover;
+
   position:fixed;
   top:0;
   left:0;
@@ -60,7 +61,7 @@ html, body {
     display: inline-block;
   }
 
-  .dropdown-content {
+  .dropdownMenu-content {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
@@ -69,19 +70,19 @@ html, body {
     z-index: 1;
   }
 
-  .dropdown-content a {
+  .dropdownMenu-content a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
   }
 
-  .dropdown:hover .dropdown-content{
+  .dropdown:hover .dropdownMenu-content{
     display: block;
     color:var(--color_prim_3);
   }
 
-  #menu:hover,#log:hover{
+  #ourmenu:hover,#ourlog:hover{
 
     background-color: var(--color_sec_24);
     color:var(--color_prim_3);
@@ -135,13 +136,13 @@ html, body {
     background-color: var(--color_sec_24);
     color:var(--color_prim_3);
   }
-  #menu{
+  #ourmenu{
   		grid-area: menu;
       background-color: rgba(255,0,0,0.1) ;
     	-webkit-transition: none;
     	height: 100%;
 	}
-	#log{
+	#ourlog{
 		grid-area: login;
 		align-self: end;
 		background-color:  rgba(255,0,0,0.1) ;

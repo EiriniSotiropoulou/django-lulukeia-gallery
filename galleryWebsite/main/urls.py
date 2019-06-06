@@ -1,4 +1,4 @@
-"""dafniWebsite URL Configuration
+"""galleryWebsite URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.1/topics/http/urls/
@@ -14,13 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import path
+from django.conf.urls import url
 from . import views
 
 app_name = "main"
 
 urlpatterns = [
     path("", views.homepage, name="homepage"),
-    path("register", views.register, name="register"),
+    path("register", views.UserFormView.as_view(), name="register"),
     path("logout", views.logout_request, name="logout"),
     path("login", views.login_request, name="login"),
     path("contact", views.contact, name="contact"),
@@ -33,6 +34,9 @@ urlpatterns = [
     path("art", views.art, name="art"),
     path("learning", views.learning, name="learning"),
     path("events", views.events, name="events"),
-    path("thanks", views.thanks, name="thanks"),
-    path("<single_slug>", views.single_slug, name="single_slug"),
+    url('^'+'art/paintings', views.IndexView.as_view(), name="paintings"),
+    url(r'^art/paintings/details/(?P<pk>[0-9]+)/$', views.DetailView.as_view(), name="details"),
+    url(r'^results/$',views.search,name="search"),
+    # path("thanks", views.thanks, name="thanks"),
+    # path("<single_slug>", views.single_slug, name="single_slug"),
 ]

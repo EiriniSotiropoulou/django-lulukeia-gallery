@@ -1,0 +1,18 @@
+{% extends "main/home.html" %}
+
+{% block content %}
+  
+  {% for p in object_list %}
+  <a class="paint" href="#">
+    <div class="paint__title paint__item">
+      {{p.title}}
+    </div>
+    <div class="paint__image paint__item">
+      <img class="paint__image__img" src="../assets/{{p.image }}">
+    </div>
+    <div class="paint__description paint__item">
+      {{p.keywords | truncatechars:400 | safe }}
+    </div>
+    <a class="paint__read-more paint__item">Read More! </a>
+  {% endfor %}
+{% endblock %}

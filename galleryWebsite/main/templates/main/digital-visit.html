@@ -1,18 +1,64 @@
 {% extends "main/home.html" %}
 
 {% block content %}
-  <div class="grid">
+<div class="grid">
     <h3>
       Digital Visit
     </h3>
-    <h1>
-      Here are our floors and the exhibits spread out!
+    <h1 style="text-transform: none;">
+      Here are our floors and the exhibits spread out! Click on the paintings to be transfered to the corresponding page.
     </h1>
-    <img src="static/main/assets/interiorMapFloors.png" alt="museumMap">
-      <map name="galleryMap">
-        <area shape="rect" coords="50,60,50,80" alt="First Floor" href="www.google.com"></area>
-        <area shape="rect" coords="150,160,150,180" alt="First Floor" href="www.google.com"></area>
-        <area shape="circle" coords="80,60,20" alt="First Floor" href="www.google.com"></area>
+      <img src="static/main/assets/lulukeiamap.png" style="height:1076px;width:789px;margin:0 auto;" alt="museumMap" usemap="#galleryMap" display="block">
+      <map name="galleryMap" id="galleryMap">
+        <!-- second floor -->
+        <area shape="rect" coords="699,240,772,310" alt="Second Floor" href="#secondfloor"></area>
+        <area shape="circle" coords="102,103,20" alt="The scream" href="\"></area>
+        <area shape="circle" coords="171,72,20" alt="Madonna" href="www.google.com"></area>
+        <area shape="circle" coords="268,52,20" alt="Portrait of Diego Rivera" href="www.google.com"></area>
+        <area shape="circle" coords="268,103,20" alt="Skeletons" href="www.google.com"></area>
+        <area shape="circle" coords="481,51,20" alt="The lamb" href="www.google.com"></area>
+
+        <area shape="rect" coords="252,213,331,231" alt="The scream" href="#secondfloor"></area>
+        <area shape="rect" coords="250,245,319,259" alt="Madonna" href="#secondfloor"></area>
+        <area shape="rect" coords="252,275,394,289" alt="Portrait of Diego Rivera" href="#secondfloor"></area>
+        <area shape="rect" coords="444,214,715,229" alt="Skeletons" href="#secondfloor"></area>
+        <area shape="rect" coords="444,235,529,247" alt="The lamb" href="#secondfloor"></area>
+
+
+
+
+        <!-- zero floor -->
+        <area shape="rect" coords="702,989,773,1059" alt="" href="#zerofloor"></area>
+        <area shape="circle" coords="96,783,20" alt="Mona lisa" href="www.google.com"></area>
+        <area shape="circle" coords="191,765,20" alt="Vetruvian Man" href="www.google.com"></area>
+        <area shape="circle" coords="450,834,20" alt="The last judgement" href="www.google.com"></area>
+        <area shape="circle" coords="558,773,20" alt="Lady with an ermine" href="www.google.com"></area>
+        <area shape="circle" coords="755,831,20" alt="THe creation of Adam" href="www.google.com"></area>
+
+        <area shape="rect" coords="253,958,330,971" alt="Mona lisa" href="#zerofloor"></area>
+        <area shape="rect" coords="254,976,349,987" alt="Vetruvian Man" href="#zerofloor"></area>
+        <area shape="rect" coords="256,995,369,1007" alt="The last judgement" href="#zerofloor"></area>
+        <area shape="rect" coords="257,1013,376,1025" alt="Lady with an ermine" href="#zerofloor"></area>
+        <area shape="rect" coords="257,1032,383,1042" alt="THe creation of Adam" href="#zerofloor"></area>
+
+
+        <!-- first floor -->
+        <area shape="rect" coords="703,619,774,684" alt="First Floor" href="#firstfloor"></area>
+        <area shape="circle" coords="105,481,20" alt="Impression Sunrise" href="www.google.com"></area>
+        <area shape="circle" coords="142,524,20" alt="Woman in the garden" href="www.google.com"></area>
+        <area shape="circle" coords="299,479,20" alt="Madame Cezanne" href="www.google.com"></area>
+        <area shape="circle" coords="390,416,20" alt="Starry night" href="www.google.com"></area>
+        <area shape="circle" coords="585,428,20" alt="La place valhubert" href="www.google.com"></area>
+
+        <area shape="rect" coords="252,570,368,586" alt="Impression Sunrise" href="#firstfloor"></area>
+        <area shape="rect" coords="255,588,277,603" alt="Woman in the garden" href="#firstfloor"></area>
+        <area shape="rect" coords="258,632,362,643" alt="Madame Cezanne" href="#firstfloor"></area>
+        <area shape="rect" coords="257,649,335,661" alt="Starry night" href="#firstfloor"></area>
+        <area shape="rect" coords="255,667,370,677" alt="La place valhubert" href="#firstfloor"></area>
+
+
+
+
       </map>
-  </div>
+</div>
 {% endblock %}
