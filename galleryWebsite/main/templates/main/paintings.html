@@ -1,34 +1,39 @@
-<!-- {% extends 'main/home.html' %} -->
+{% extends 'main/home.html' %}
 
 {% block content %}
 <ul>
-      {% for  p in all_paints %}
+      {% for  p in object_list %}
         <li style="float:none;margin: auto;list-style-type:none;">
-          <a href="{% url 'main/art/paintings:details/' p.paintid %}">{{p.title}}</a>
+           <!-- <a href="{% url 'main/art/paintings:details/' p.paintid %}">{{p.title}}</a> -->
           <br>
         </li>
 
-        <!-- Keywords: {{p.keywords}} -->
-        <!-- <br> -->
+        Keywords: {{p.keywords}}
+        <br>
       {% endfor %}
 </ul>
 
-<!--  Search process -->
+
+<!--
+  Search process
 <form action="" method="GET">
   <input type="text" name="q" placeholder="Search..." value={{request.GET.q}}>
   <input type="submit" value="Search">
 
-</form>
+</form> -->
 
-  <h1>Paint </h1>
-  {% for p in results %}
-    ID: {{ p.paintid }} <br>
-    Title: {{ p.title }} <br>
-    Material: {{ p.material }} <br>
-    Painter: {{ p.painterid }} <br>
-    <!-- {{ p.paginator.count}}
-    {{p.paginator.pages_range}}
-    {{ p.has_next }} -->
-  {% endfor %}
+<!-- {% with i=0 %} -->
+<!-- {% for p in results %}
 
+  ID: {{ p.paintid }} <br>
+  Title: {{ p.title }} <br>
+  Material: {{ p.material }} <br>
+  PainterID: {{ p.painterid }} <br>
+
+{% endfor %} -->
+
+<!-- {% for name in names %}
+    Painter: {{name}} <br>
+{% endfor %} -->
+<!-- {% endwith %} -->
 {% endblock %}

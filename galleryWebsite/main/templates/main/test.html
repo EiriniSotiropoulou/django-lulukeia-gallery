@@ -1,0 +1,25 @@
+<h2 align="center"> SQL Queries display </h2>
+{% block content %}
+
+<!--  Search process -->
+<form action="" method="GET">
+  <input type="text" name="q" placeholder="Search..." value={{request.GET.q}}>
+  <input type="submit" value="Search">
+
+</form>
+
+<!-- {% with i=0 %} -->
+{% for p in results %}
+
+  ID: {{ p.paintid }} <br>
+  Title: {{ p.title }} <br>
+  Material: {{ p.material }} <br>
+  PainterID: {{ p.painterid }} <br>
+
+{% endfor %}
+
+{% for name in names %}
+    Painter: {{name}} <br>
+{% endfor %}
+<!-- {% endwith %} -->
+{% endblock %}

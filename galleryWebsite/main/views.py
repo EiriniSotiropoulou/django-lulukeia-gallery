@@ -7,9 +7,9 @@ from django.contrib import messages
 from django.db.models import Q
 # from example.config import pagination
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.views import generic
+# from django.views import generic
 
-from django.views.generic import ListView,View
+from django.views.generic import View,ListView,DetailView
 from django.views.generic.edit import CreateView,UpdateView,DeleteView
 from .forms import UserForm
 #csrf stuff
@@ -19,15 +19,50 @@ from .models import *
 from django.shortcuts import render, redirect
 # needed for query merging
 from itertools import chain
+import pymysql
+from django import template
 
+register = template.Library()
 
-class IndexView(generic.ListView):
+connection=pymysql.connect(host='localhost',
+port=3306,user='root',passwd='',
+db="projectdb_18",
+autocommit=True)
+
+#
+#
+# @register.filter(name='test')
+# def test(request) :
+#
+#     # cursor = connection.cursor()
+#     # cursor.execute('''SELECT * FROM painter WHERE `painterid` = %s ''',painterid)
+#     # row = cursor.fetchone()
+#     #
+#     # print(row)
+#     paints=Paint.objects.all()
+#     names=[]
+#     for p in paints:
+#         obj=Painter.objects.get(painterid=p.painterid.painterid)
+#         print(type(p.painterid))
+#         print(p.painterid.painterid)
+#         names.append(obj.lastname)
+#
+#     print(names)
+#     context = {"names":names}
+#     return render(request, "main/test.html", context)
+#     # return context
+
+class IndexView(ListView):
     template_name='main/paintings.html'
     context_object_name="all_paints"
+
+
     def get_queryset(self):
         return Paint.objects.all()
 
-class DetailView(generic.DetailView):
+    
+
+class DetailView(DetailView):
     model=Paint
     template_name='main/details.html'
     # context_object_name="paint"
@@ -166,7 +201,7 @@ def search(request):
     page_request_var="page"
     page=request.GET.get(page_request_var)
 
-
+    # painter = Painter.objects.filter(painterid=results[0].painterid)
     # check on the query error in case of gap etc...
     if query:
         # define on what you are searching
@@ -179,6 +214,14 @@ def search(request):
         results=Paint.objects.all()
     # pages=paginator(request,results,num=1)
 
+    names=[]
+    for p in results:
+        obj=Painter.objects.get(painterid=p.painterid.painterid)
+        names.append(obj.lastname)
+
+
+
+
     try:
         items=paginator.page(page)
     except PageNotAnInteger:
@@ -186,10 +229,25 @@ def search(request):
     except EmptyPage:
         items=paginator.page(paginator.num_pages)
 
+
+
+
     context={
         'results':results,
+        'painter_list':painter_list,
         'query': query,
         'items':items,
         "page_request_var":page_request_var,
+        "names":names,
     }
+
     return render(request,template_name,context)
+
+# def paint_list(request):
+#
+#     paint_list=Paint.objects.all()
+#     painter_paints=Paint.objects.get_painters_paints('Monet')
+#     context={
+#         'paint_list':paint_list,
+#         'painter_paints':painter_paints,
+#     }

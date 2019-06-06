@@ -6,7 +6,7 @@
 #   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
 # Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
-
+from .managers import PostManager
 
 class Artgallery(models.Model):
     galleryid = models.AutoField(db_column='galleryID', primary_key=True)  # Field name made lowercase.
@@ -215,6 +215,8 @@ class Paint(models.Model):
         db_table = 'paint'
 
 
+
+
 class Painter(models.Model):
     painterid = models.AutoField(db_column='painterID', primary_key=True)  # Field name made lowercase.
     firstname = models.CharField(db_column='firstName', max_length=255)  # Field name made lowercase.
@@ -230,6 +232,9 @@ class Painter(models.Model):
     class Meta:
         managed = False
         db_table = 'painter'
+
+    def get_subfeature_painter(self):
+        return self.painterid_set.filter(type=painterid)
 
 
 class Room(models.Model):

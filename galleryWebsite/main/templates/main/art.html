@@ -2,32 +2,72 @@
 
 {% block content %}
   <div class="grid">
+
+<!-- path for assets: ../../static/main/assets/bla.img -->
+      <!-- content -->
+      <!-- content -->
+      <!-- content -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+      <!-- JS loading... -->
+      <script src="./../static/main/js/index.js"></script>
+      <div id="greetings">
+        <h1>Welcome to the world of art...</h1>
+      </div>
+
+
+
+      <div class="content">
+
+        <div id="mona">
+          <a href="art/painters"><img  src="../../static/main/assets/mona.jpg"></a>
+          <a href="art/painters"><div class="links">Painters</div></a>
+
+        </div>
+
+        <div id="starry">
+          <a href="art/paintings"><img  src="../../static/main/assets/starry.jpg" ></a>
+          <a href="art/paintings"><div class="links">Rooms</div></a>
+        </div>
+
+        <div id="guernica">
+          <a href="art/movements"><img  src="../../static/main/assets/guernica.jpg" ></a>
+          <a href="art/movements"><div class="links">Artistic Movements</div></a>
+        </div> -->
+
+         <div id="dancers">
+          <a href="#art/exhibition"><img  src="../../static/main/assets/dancers.jpg"></a>
+          <a href="#art/exhibition"><div class="links">Exhibition</div></a>
+        </div>
+
+        <div id="walking">
+          <a href="art/paintings"><img  src="../../static/main/assets/oil-painting-underwater-paintings-isabel-emrich-6.jpg" ></a>
+          <a href="art/paintings"><div class="links">Paintings</div></a>
+        </div>
+        <div id="flowers">
+          <a href="#art/yourart"><img  src="../../static/main/assets/flowers.jpg" ></a>
+          <a href="#art/yourart"><div class="links">Register your art!</div></a>
+        </div>
+      </div>
+
+<!-- <script src="../js/index.js"></script> -->
+
+<!--   <div class="grid">
     <h1>
       Art
     </h1>
     <h3>
       Our Exhibits!
     </h3>
-    <!--  Using fancybox - JavaScript lightbox library for presenting various types of media.
-      Responsive, touch-enabled and customizable. -->
+    <!--  Using fancybox - JavaScript lightbox library for presenting various types of media. Responsive, touch-enabled and customizable.
+      Responsive, touch-enabled and customizable.
     <div class="gallery-container" id="gallery-container">
       <div class="gallery-item">
         <a data-fancybox="gallery" href="static/main/assets/flowers.jpg"><img class="gallery-img" src="static/main/assets/flowers.jpg" alt="Descripcion 1"></a>
-        </div>
-      <div class="gallery-item">
-        <a data-fancybox="gallery" href="static/main/assets/guernica.jpg"><img class="gallery-img" src="static/main/assets/guernica.jpg" alt="Descripcion 2"></a>
-      </div>
-      <div class="gallery-item">
-        <a data-fancybox="gallery" href="static/main/assets/walking.jpg"><img class="gallery-img" src="static/main/assets/walking.jpg" alt="Descripcion 3"></a>
-      </div>
-      <div class="gallery-item">
-        <a data-fancybox="gallery" href="static/main/assets/starry.jpg"><img class="gallery-img" src="static/main/assets/starry.jpg" alt="Descripcion 4"></a>
-      </div>
-      <div class="gallery-item">
-        <a data-fancybox="gallery" href="static/main/assets/dancers.jpg"><img class="gallery-img" src="static/main/assets/dancers.jpg" alt="Descripcion 5"></a>
+@@ -28,6 +86,6 @@ <h3>
         </div>
     </div>
   </div>
 
+ -->
 
 {% endblock %}
