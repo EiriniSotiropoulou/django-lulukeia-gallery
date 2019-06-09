@@ -1,5 +1,14 @@
-<img src="{{ paint.imagePath }}">
+{% extends "main/home.html" %}
 
-<h1> Title: {{ paint.title }} </h1>
-<h2> Painter: {{ paint.painterid }}</h2>
-<h3> Keywords: {{ paint.keywords }}</h3>
+{% block content %}
+  <div class="details">
+    <h1> Title: {{ paint.title }} </h1>
+    <h2>
+          Painter: {{paint.painterid.lastname}} <br>
+    </h2>
+    <h3> Keywords: {{ paint.keywords }}</h3>
+    <img src="../../../../static/main/assets/paintings/{{paint.image}}" alt="{{ paint.title }}">
+  </div>
+
+
+{% endblock %}

@@ -5,9 +5,6 @@ from django.conf.urls.static import static
 from django.urls import path,include
 from django.conf.urls import url,re_path
 
-
-
-
 app_name = "main"
 
 urlpatterns = [
@@ -27,8 +24,8 @@ urlpatterns = [
     path("art",views.art,name="art"),
     re_path(r'art/paintings/$', views.IndexView.as_view(), name="paintings"),
     re_path(r'^art/paintings/details/(?P<pk>[0-9]+)/$', views.DetailView.as_view(), name="details"),
-    re_path(r'^test/$',views.search,name="search"),
-
+    re_path(r'^test/',views.search,name="search"),
+    # re_path(r'^test2/', views.getPainterName, name="details"),
     # path("thanks", views.thanks, name="thanks"),
     # path("<single_slug>", views.single_slug, name="single_slug"),
 ]

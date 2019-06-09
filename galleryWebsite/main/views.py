@@ -24,10 +24,6 @@ from django import template
 
 register = template.Library()
 
-connection=pymysql.connect(host='localhost',
-port=3306,user='root',passwd='',
-db="projectdb_18",
-autocommit=True)
 
 #
 #
@@ -60,12 +56,80 @@ class IndexView(ListView):
     def get_queryset(self):
         return Paint.objects.all()
 
-    
+
 
 class DetailView(DetailView):
+
     model=Paint
     template_name='main/details.html'
-    # context_object_name="paint"
+
+
+    # def getPainterName(self, request, pk, *args, **kwargs):
+    #     self.object = self.get_object()
+    #     pk=self.kwargs.get('pk')
+    #     # context_object_name="paint"
+    #     paint_list=Paint.objects.all()
+    #     painter_list=Painter.objects.all()
+    #     object_list = list(chain(paint_list, painter_list))
+    #
+    #     #q is query valuable
+    #     query=request.GET.get('q')
+    #
+    #     paginator=Paginator(object_list,1)
+    #     page_request_var="page"
+    #     page=request.GET.get(page_request_var)
+    #
+    #     # painter = Painter.objects.filter(painterid=results[0].painterid)
+    #     # check on the query error in case of gap etc...
+    #     if query:
+    #         # define on what you are searching
+    #         results=Paint.objects.filter(
+    #         Q(title__icontains=query) |
+    #         Q(keywords__icontains=query)|
+    #         Q(material__icontains=query)
+    #         ).distinct()
+    #     else:
+    #         results=Paint.objects.all()
+    #     # pages=paginator(request,results,num=1)
+    #
+    #     names=[]
+    #     for p in results:
+    #         obj=Painter.objects.get(painterid=pk)
+    #         names.append(obj.lastname)
+    #
+    #
+    #     try:
+    #         items=paginator.page(page)
+    #     except PageNotAnInteger:
+    #         items=paginator.page(1)
+    #     except EmptyPage:
+    #         items=paginator.page(paginator.num_pages)
+    #
+    #
+    #     context={
+    #         'results':results,
+    #         'painter_list':painter_list,
+    #         'query': query,
+    #         'items':items,
+    #         "page_request_var":page_request_var,
+    #         "names":names,
+    #     }
+    #
+    #
+    #     self.object.name=names[0]
+    #     return render(request,template_name,context)
+
+
+def getPainterName(request):
+    paints=Paint.objects.all()
+    c=Painter.objects.get(painterid=4)
+
+    painterName=[c.firstname,c.nickname,c.lastname]
+    print(painterName)
+    return c.lastname
+
+
+
 
 def homepage(request):
     return render(request=request,
@@ -103,14 +167,6 @@ def art(request):
     return render(request=request,
                   template_name='main/art.html',
                   context={"": ''})
-
-# def paintings(request):
-#
-#     painters=Painter.objects.all()
-#
-#     paints=Paint.objects.all()
-#     context={ 'paints': paints,'painters': painters}
-#     return render(request,'main/paintings.html',context)
 
 
 
@@ -189,7 +245,7 @@ def login_request(request):
                     context={"form":form})
 
 def search(request):
-    template_name= 'main/paintings.html'
+    template_name= 'main/test.html'
     paint_list=Paint.objects.all()
     painter_list=Painter.objects.all()
     object_list = list(chain(paint_list, painter_list))
@@ -218,9 +274,7 @@ def search(request):
     for p in results:
         obj=Painter.objects.get(painterid=p.painterid.painterid)
         names.append(obj.lastname)
-
-
-
+        names.append(obj.firstname)
 
     try:
         items=paginator.page(page)
@@ -228,8 +282,6 @@ def search(request):
         items=paginator.page(1)
     except EmptyPage:
         items=paginator.page(paginator.num_pages)
-
-
 
 
     context={
@@ -242,12 +294,3 @@ def search(request):
     }
 
     return render(request,template_name,context)
-
-# def paint_list(request):
-#
-#     paint_list=Paint.objects.all()
-#     painter_paints=Paint.objects.get_painters_paints('Monet')
-#     context={
-#         'paint_list':paint_list,
-#         'painter_paints':painter_paints,
-#     }

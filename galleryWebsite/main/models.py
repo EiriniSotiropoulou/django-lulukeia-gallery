@@ -208,11 +208,14 @@ class Paint(models.Model):
     roomid = models.ForeignKey('Room', models.DO_NOTHING, db_column='roomID', blank=True, null=True)  # Field name made lowercase.
     rating = models.FloatField(blank=True, null=True)
     countrate = models.IntegerField(db_column='countRate', blank=True, null=True)  # Field name made lowercase.
-    image = models.TextField(blank=True, null=True)
+    image = models.TextField(max_length=255,blank=True, null=True)
 
     class Meta:
         managed = False
         db_table = 'paint'
+
+    def __str__(self):
+        return self.title
 
 
 
@@ -236,6 +239,9 @@ class Painter(models.Model):
     def get_subfeature_painter(self):
         return self.painterid_set.filter(type=painterid)
 
+    def __str__(self):
+        return self.lastname
+
 
 class Room(models.Model):
     roomid = models.AutoField(db_column='roomID', primary_key=True)  # Field name made lowercase.
@@ -245,6 +251,9 @@ class Room(models.Model):
     class Meta:
         managed = False
         db_table = 'room'
+
+    def __str__(self):
+        return self.artmovement
 
 
 # class Suggest(models.Model):

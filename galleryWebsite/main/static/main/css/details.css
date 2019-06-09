@@ -1,0 +1,10 @@
+.details img {
+  /* width: 50%;
+  height: auto;
+  vertical-align: middle; */
+  display: block;
+  max-width:40%;
+  max-height:40%;
+  width: auto;
+  height: auto;
+}

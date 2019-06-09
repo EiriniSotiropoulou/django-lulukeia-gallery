@@ -9,7 +9,15 @@ html, body {
   -webkit-font-smoothing: antialiased;
   margin: 0 0 0 0;
 }
+#search{
+  display: grid;
+  grid-template-columns: 100px 50px 100px;
+  grid-template-rows: 80px auto 80px;
+  grid-column-gap: 10px;
+  grid-row-gap: 15px;
+  margin-left:5vh;
 
+}
 img {
     display: block;
     margin-left: auto;

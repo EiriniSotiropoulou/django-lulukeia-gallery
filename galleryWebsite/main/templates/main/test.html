@@ -1,25 +1,32 @@
-<h2 align="center"> SQL Queries display </h2>
+{% extends "main/home.html" %}
 {% block content %}
-
+<h2 align="center"> SQL Queries display </h2>
 <!--  Search process -->
-<form action="" method="GET">
-  <input type="text" name="q" placeholder="Search..." value={{request.GET.q}}>
-  <input type="submit" value="Search">
+  <form action="" method="GET">
+    <input type="text" name="q" placeholder="Search..." value={{request.GET.q}}>
+    <input type="submit" value="Search">
 
-</form>
 
-<!-- {% with i=0 %} -->
-{% for p in results %}
 
-  ID: {{ p.paintid }} <br>
-  Title: {{ p.title }} <br>
-  Material: {{ p.material }} <br>
-  PainterID: {{ p.painterid }} <br>
+  </form>
+  <div class="search" id="search" style="margin-left:5vh;">
 
-{% endfor %}
+  {% for p in results %}
 
-{% for name in names %}
-    Painter: {{name}} <br>
-{% endfor %}
-<!-- {% endwith %} -->
+    <!-- ID: {{ p.paintid }} <br> -->
+    Title: {{ p.title }} <br>
+    Material: {{ p.material }} <br>
+
+    Painter firstname: {{ p.painterid.firstname }} <br>
+    Painter lastname: {{ p.painterid.lastname }} <br>
+
+    <br><br>
+    Next painting...<br><br>
+
+
+
+
+  {% endfor %}
+  </div>
+
 {% endblock %}
